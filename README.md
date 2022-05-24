@@ -8,7 +8,7 @@
 - Monorepo
 - [Typescript](https://www.typescriptlang.org/)
 - [Prettier](https://prettier.io/) setup
-- Use `@core/lib` as a shared package 
+- Use `@shared/ui` as a shared package 
 - [Mui](https://mui.com/), [Redux](https://redux.js.org/) and [Mobx](https://mobx.js.org/README.html) preconfigured.
 - Easy to customise
 - Github Actions
@@ -21,7 +21,7 @@ Install `node_modules`
 yarn
 ```
 
-Build the `@core/lib` first.
+Build the `@shared/ui` first.
 
 ```
 yarn build:lib

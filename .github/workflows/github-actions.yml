@@ -22,11 +22,11 @@ jobs:
             - name: Install dependencies
               run: yarn install
 
-            - name: Build @core/lib
-              run: yarn build:lib
+            - name: Build @shared/ui
+              run: yarn build:shared-ui
 
             - name: Build frontend
               run: yarn frontend:build
 
-            - name: Build fastify-server
-              run: yarn fastify-server:build
+            - name: Build server
+              run: yarn server:build
