@@ -11,4 +11,4 @@ COPY . .
 
 RUN yarn shared-ui:build
 
-CMD ["yarn", "frontend" ]
+CMD ["yarn", "frontend:build" ]
