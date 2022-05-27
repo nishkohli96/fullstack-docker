@@ -1,5 +1,5 @@
 # Base Image
-FROM node:17-alpine3.14
+FROM node:17-alpine3.14 as phase1
 
 WORKDIR /app
 
@@ -12,6 +12,7 @@ COPY . .
 RUN yarn shared-ui:build
 RUN yarn frontend:build
 
+
 # Phase 2 - Get the Build and host on nginx
 FROM nginx:1.21.6-alpine
-COPY --from=0 /packages/frontend/build /usr/share/nginx/html
+COPY --from=phase1 /app/packages/frontend/build /usr/share/nginx/html
