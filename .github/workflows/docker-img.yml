@@ -25,6 +25,6 @@ jobs:
             #       push: true
             #       tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker:latest
             - name: Build Image
-              run: docker build -f Dockerfiles/Dockerfile.feBuild -t ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker:latest
+              run: docker build -f Dockerfiles/Dockerfile.feBuild -t ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker:latest .
             - name: Push Image to Docker Hub
               run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker:latest
