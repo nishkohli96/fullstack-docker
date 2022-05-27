@@ -6,7 +6,7 @@ WORKDIR /app
 # Run yarn only if package.json changes
 COPY package.json .
 RUN yarn install
-RUN yarn add typescript
+RUN yarn workspace @shared/ui add typescript
 
 # Phase 1 - Build our app
 COPY . .
