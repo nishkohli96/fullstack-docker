@@ -23,7 +23,7 @@ jobs:
               run: yarn install
 
             - name: Build @shared/ui
-              run: yarn build:shared-ui
+              run: yarn shared-ui:build
 
             - name: Build frontend
               run: yarn frontend:build
