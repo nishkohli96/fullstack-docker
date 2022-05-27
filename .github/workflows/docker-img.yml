@@ -18,19 +18,14 @@ jobs:
               with:
                   username: ${{ secrets.DOCKER_HUB_USERNAME }}
                   password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-            - name: Build and push
-              uses: docker/build-push-action@v3
-              with:
-                  script: |
-                      docker build -f Dockerfiles/Dockerfile.feBuild -t ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker-fe:latest .
-                      docker push ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker-fe:latest
+
             # - name: Build and push
             #   uses: docker/build-push-action@v3
             #   with:
             #       context: ../../Dockerfiles/Dockerfile.feBuild
             #       push: true
             #       tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker:latest
-            # - name: Build Image
-            #   run: docker build -f Dockerfiles/Dockerfile.feBuild -t ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker-fe:latest .
-            # - name: Push Image to Docker Hub
-            #   run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker-fe:latest
+            - name: Build Image
+              run: docker build -f Dockerfiles/Dockerfile.feBuild -t ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker-fe:latest .
+            - name: Push Image to Docker Hub
+              run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker-fe:latest
