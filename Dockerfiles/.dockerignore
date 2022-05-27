@@ -1,0 +1,7 @@
+node_modules
+
+.prettierrc
+.prettierignore
+.github
+.husky
+README.md

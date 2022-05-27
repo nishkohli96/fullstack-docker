@@ -1,0 +1,14 @@
+# Base Image
+FROM node:18-alpine3.14
+
+WORKDIR /app
+
+# Run yarn only if package.json changes
+COPY ./package.json ./
+RUN yarn
+
+COPY . .
+
+RUN yarn shared-ui:build
+
+CMD ["yarn", "frontend" ]
