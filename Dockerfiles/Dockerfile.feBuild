@@ -12,7 +12,6 @@ COPY . .
 RUN yarn shared-ui:build
 RUN yarn frontend:build
 
-
 # Phase 2 - Get the Build and host on nginx
 FROM nginx:1.21.6-alpine
 COPY --from=phase1 /app/packages/frontend/build /usr/share/nginx/html

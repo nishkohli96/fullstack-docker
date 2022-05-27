@@ -5,7 +5,7 @@
 	"main": "./build/index.js",
 	"license": "MIT",
 	"scripts": {
-		"build": "tsc --build"
+		"build": "yarn run tsc --build"
 	},
 	"dependencies": {
 		"@mui/icons-material": "^5.8.0",

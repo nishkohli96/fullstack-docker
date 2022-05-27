@@ -24,9 +24,6 @@ jobs:
                   username: ${{ secrets.DOCKER_HUB_USERNAME }}
                   password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-            - name: tsc
-              uses: icrawl/action-tsc@v1
-
             - name: Build Image
               run: docker build -f Dockerfiles/Dockerfile.feBuild -t ${{ secrets.DOCKER_HUB_USERNAME }}/fs-docker-fe:latest .
 
