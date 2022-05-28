@@ -7,11 +7,11 @@ RUN npm i -g typescript
 
 # Run yarn only if package.json changes
 COPY package.json .
-RUN yarn install
+RUN npm install
 
 # Phase 1 - Build our app
 COPY . .
-# RUN yarn shared-ui:build
+RUN yarn shared-ui:build
 RUN yarn frontend:build
 
 # Phase 2 - Get the Build and host on nginx
