@@ -2,11 +2,10 @@
 FROM node:17-alpine3.14 as phase1
 
 WORKDIR /app
-
+RUN npm i -g typescript
 # Run yarn only if package.json changes
 COPY package.json .
 RUN yarn install
-RUN yarn workspace @shared/ui add typescript
 
 # Phase 1 - Build our app
 COPY . .
