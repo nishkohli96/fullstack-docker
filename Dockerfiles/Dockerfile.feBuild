@@ -7,14 +7,14 @@ RUN npm i -g typescript
 
 # Run yarn only if package.json changes
 COPY package.json .
-RUN cd packages/shared-ui 
+RUN cd /app/packages/shared-ui 
 RUN npm install
 RUN cd ..
 RUN cd ..
 # Phase 1 - Build our app
 COPY . .
 RUN yarn shared-ui:build
-RUN cd packages/frontend
+RUN cd /app/packages/frontend
 RUN npm install
 RUN yarn build
 
