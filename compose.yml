@@ -1,15 +1,9 @@
 services:
-    frontend:
+    frontend-build:
         image: nish1896/fs-docker-fe
-        build:
-            context: ../../
-        entrypoint:
-            - 'yarn'
-            - 'workspace'
-            - 'frontend'
-        command: ['start']
-        ports:
-            - '3000:80'
+        extends:
+            file: ./packages/frontend/compose.yml
+            service: frontend
 
     # backend:
     #     image: nish1896/fs-docker-be
