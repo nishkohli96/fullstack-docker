@@ -1,0 +1,7 @@
+services:
+    frontend:
+        image: nish1896/fs-docker-fe
+        build:
+            context: ../../
+        ports:
+            - '3000:80'

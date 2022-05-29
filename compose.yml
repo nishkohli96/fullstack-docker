@@ -1,14 +1,20 @@
 services:
-    # frontend:
-    #     image: nish1896/fs-docker-fe
-    #     build: packages/frontend
-    #     ports:
-    #         - '3000:80'
-
-    backend:
-        image: nish1896/fs-docker-be
+    frontend:
+        image: nish1896/fs-docker-fe
         build:
-            context: packages/server
-            dockerfile: Dockerfile.dist
+            context: ../../
+        entrypoint:
+            - 'yarn'
+            - 'workspace'
+            - 'frontend'
+        command: ['start']
         ports:
-            - '4000:4000'
+            - '3000:80'
+
+    # backend:
+    #     image: nish1896/fs-docker-be
+    #     build:
+    #         context: packages/server
+    #         dockerfile: Dockerfile.dist
+    #     ports:
+    #         - '4000:4000'
