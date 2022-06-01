@@ -1,0 +1,9 @@
+services:
+    frontend:
+        extends:
+            file: ./packages/frontend/compose.yml
+            service: frontend
+    backend:
+        extends:
+            file: ./packages/server/compose.yml
+            service: backend

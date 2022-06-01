@@ -12,6 +12,7 @@
 		"frontend:build": "yarn workspace frontend build",
 		"server": "yarn workspace server start",
 		"server:build": "yarn workspace server build",
+		"server:prod": "yarn workspace server prod",
 		"shared-ui:build": "yarn workspace @shared/ui build",
 		"prettier": "prettier --write *",
 		"prepare": "husky install"

@@ -1,0 +1,9 @@
+services:
+    backend:
+        image: nish1896/fs-docker-be
+        build:
+            context: ../../
+            dockerfile: Dockerfile.be
+        command: ['node', './packages/server/dist/main.js']
+        ports:
+            - '4000:4000'

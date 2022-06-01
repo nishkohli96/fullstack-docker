@@ -5,8 +5,10 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"sourceMap": false,
-		"outDir": "../../builds/fastify-server",
+		"outDir": "dist",
 		"baseUrl": "src",
+		"rootDir": "src",
+		"resolveJsonModule": false,
 		"incremental": true,
 		"composite": true
 	}
