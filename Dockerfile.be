@@ -7,6 +7,4 @@ RUN npm install
 
 COPY . .
 
-RUN yarn server:prod
-
-CMD ["node","./packages/server/dist/main.js"]
+RUN yarn server:build

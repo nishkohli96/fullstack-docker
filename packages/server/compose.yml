@@ -4,5 +4,6 @@ services:
         build:
             context: ../../
             dockerfile: Dockerfile.be
+        command: ['node', './packages/server/dist/main.js']
         ports:
             - '4000:4000'
