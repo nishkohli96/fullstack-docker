@@ -3,5 +3,6 @@ services:
         image: nish1896/fs-docker-fe
         build:
             context: ../../
+            dockerfile: Dockerfile.fe
         ports:
             - '3000:80'
