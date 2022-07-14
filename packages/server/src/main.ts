@@ -19,9 +19,10 @@ async function bootstrap() {
 		}),
 		{
 			logger: ['error', 'warn'],
+			cors: true,
 		}
 	);
-
+	// app.enableCors();
 	app.register(compression, { encodings: ['gzip', 'deflate'] });
 
 	await app.listen(4000);
