@@ -14,3 +14,11 @@ export async function downloadFile() {
 	document.body.removeChild(link);
 	URL.revokeObjectURL(url);
 }
+
+export async function openFileInBrowser() {
+	const result = await axios.get('http://localhost:4000/file');
+	const { blob } = result.data;
+	const fileBlob = new window.Blob([blob], { type: 'application/pdf' });
+	const fileURL = URL.createObjectURL(fileBlob);
+	window.open(fileURL);
+}

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Button } from '@mui/material';
 import { RootDiv } from '@shared/ui';
 import RHF from './RHF';
-import { downloadFile } from './fileHelpers';
+import { downloadFile, openFileInBrowser } from './fileHelpers';
 
 const HomePage: FC = () => {
 	const { REACT_APP_TESTVAR } = process.env;
@@ -17,7 +17,9 @@ const HomePage: FC = () => {
 						Download pdf
 					</Button>
 				</div>
-				<Button variant="contained">Open pdf</Button>
+				<Button variant="contained" onClick={() => openFileInBrowser()}>
+					Open pdf
+				</Button>
 			</div>
 		</RootDiv>
 	);
